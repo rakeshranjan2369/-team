@@ -1,0 +1,32 @@
+
+:root {
+  --bg: #0b0f17; --panel: #111827; --text: #e5e7eb; --muted: #9ca3af;
+  --accent: #60a5fa; --danger: #ef4444; --ring: #2563eb55;
+}
+.light { --bg: #f7f8fb; --panel: #ffffff; --text: #111827; --muted: #6b7280; --accent: #2563eb; --danger: #dc2626; --ring: #2563eb22; }
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:radial-gradient(800px 600px at 80% -10%,#1f2937 0%,var(--bg) 40%),var(--bg);min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+.topbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:color-mix(in oklab,var(--panel),transparent 30%);backdrop-filter:blur(8px);border-bottom:1px solid #ffffff11}
+.topbar h1{font-size:18px;margin:0}
+.layout{display:grid;grid-template-columns:340px 1fr;gap:16px;max-width:1200px;margin:16px auto;padding:0 16px;width:100%}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid #FFFFFF12;border-radius:14px;padding:16px;box-shadow:0 10px 30px #00000044}
+.stage{background:var(--panel);border:1px solid #FFFFFF12;border-radius:14px;padding:12px;display:grid;place-items:center;min-height:60vh;box-shadow:0 10px 30px #00000044}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+@media (max-width:900px){.videos{grid-template-columns:1fr}}
+.videoCard{position:relative;background:#0f172a;border-radius:12px;overflow:hidden;border:1px solid #ffffff12}
+video{width:100%;height:48vh;object-fit:cover;background:#0f172a}
+.label{position:absolute;left:8px;bottom:8px;background:#00000088;padding:4px 8px;border-radius:8px;font-size:12px}
+.row{display:flex;gap:8px;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+button,.link{padding:10px 12px;border-radius:10px;border:1px solid #ffffff22;background:#0b1220;color:var(--text);cursor:pointer}
+button:hover{border-color:var(--ring)}
+button.danger{background:#220c0c;border-color:#ffffff22;color:#ffdada}
+button.ghost{background:transparent}
+input{flex:1;min-width:120px;padding:10px 12px;border-radius:10px;border:1px solid #ffffff22;background:transparent;color:var(--text)}
+.chat{height:160px;overflow:auto;border:1px solid #ffffff1a;border-radius:10px;padding:8px;background:#0b1220}
+.msg{padding:6px 8px;border-radius:8px;margin:6px 0;max-width:80%}
+.me{background:#1f2937;margin-left:auto}
+.them{background:#0f172a}
+.footer{opacity:.7;text-align:center;padding:16px;font-size:12px}
+.link{text-decoration:none;display:inline-flex;align-items:center}

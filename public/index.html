@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Web Calling App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Free Web Calling</h1>
+    <div class="actions">
+      <button id="themeBtn" class="ghost">🌓 Theme</button>
+      <a id="inviteLink" class="link" href="#">Copy Invite</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel">
+      <h2>Room</h2>
+      <div class="row">
+        <input id="roomInput" placeholder="Enter room ID (e.g., team-123)" />
+        <button id="joinBtn">Join</button>
+        <button id="leaveBtn" class="danger" disabled>Leave</button>
+      </div>
+
+      <h2>Controls</h2>
+      <div class="grid">
+        <button id="toggleCam">📷 Camera Off</button>
+        <button id="toggleMic">🎤 Mute</button>
+        <button id="shareScreen">🖥️ Share Screen</button>
+        <button id="recordBtn">⏺️ Start Recording</button>
+        <button id="endCall" class="danger">⏹️ End Call</button>
+      </div>
+
+      <h2>Chat</h2>
+      <div id="chat" class="chat"></div>
+      <div class="row">
+        <input id="chatInput" placeholder="Type a message and press Enter" />
+        <button id="sendBtn">Send</button>
+      </div>
+
+      <div class="note">
+        Tip: Works best on <b>HTTPS</b> or <b>localhost</b>. Uses free Google STUN
+        (no TURN), so some restricted networks may not connect.
+      </div>
+    </aside>
+
+    <section class="stage">
+      <div class="videos">
+        <div class="videoCard">
+          <video id="localVideo" autoplay playsinline muted></video>
+          <span class="label">You</span>
+        </div>
+        <div class="videoCard">
+          <video id="remoteVideo" autoplay playsinline></video>
+          <span class="label">Peer</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built with WebRTC + WebSockets. Fully free to run locally; deploy anywhere that supports Node + WebSockets.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
